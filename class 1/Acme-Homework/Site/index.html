@@ -1,0 +1,102 @@
+<!doctype html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<style>
+			body{
+				font-family:helvetica, arial, san-serif;
+				color:#a19c96;
+			}
+
+			#logo {
+				margin:20px 0 0 0;
+			}
+
+			#menu {
+				list-style:none;
+				padding:0;
+				margin:0 0 20px;
+			}
+
+			#menu li a{
+				text-decoration:none;
+				text-transform: uppercase;
+				font-size: 24px;
+				font-weight:bold;
+				padding:0;
+				margin:0;
+				color:#a19c96;
+			}
+
+			h2 { font-weight:200;}
+
+			#hero{
+				display:none;
+			}
+
+			@media screen and (min-width:768px){
+				
+				body{
+					max-width:780px;
+					margin:0 auto;
+				}
+
+				#logo{ 
+					float:left;
+					margin-top:10px;
+				}
+
+				#menu{
+					float:right;
+					margin-top:65px;
+				}
+
+				#menu li{
+					display:inline;
+					margin-top:20px;
+				}
+
+				#menu li a{
+					margin-left:20px;
+					font-size:24px;
+				}
+
+				#hero{
+					display:block;
+					width:100%;
+				}
+
+				.info {
+					width:45%;
+					margin-right:5%;
+					float:left;
+				}
+
+				.info:last-child{
+					margin-right:0;
+				}
+			}
+
+		</style>
+	</head>
+		<body>
+		<h1 id="logo"><img src="images/acme-logo.png" /></h1>
+
+		<ul id="menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#about-us">About Us</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		
+		<div id="hero"><img src="images/anvil.png" /></div>
+
+		<div class="info">
+			<h2>Why Acme?</h2>
+			<p>Acme products have been known for centuries to be defective, amazing, and exported.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar gravida imperdiet. Nunc faucibus, erat in cursus scelerisque, arcu justo mollis nisi, et sollicitudin risus elit a elit. Nunc nec nisl consequat enim facilisis pharetra bibendum vel massa. Suspendisse potenti. Quisque mollis at arcu id sodales. Phasellus eget lacinia odio, at sagittis dui. Vestibulum consectetur eros </p>
+		</div>
+		
+		<div class="info">
+			<h2>Anvils are not working</h2>
+			<p>Acme products have been known for centuries to be defective, amazing, and exported.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar gravida imperdiet. Nunc faucibus, erat in cursus scelerisque, arcu justo mollis nisi, et sollicitudin risus elit a elit. Nunc nec nisl consequat enim facilisis pharetra bibendum vel massa. Suspendisse potenti. Quisque mollis at arcu id sodales. Phasellus eget lacinia odio, at sagittis dui. Vestibulum consectetur eros purus, non semper diam mattis id. Duis gravida viverra lectus eget consequat. Aliquam pulvinar ipsum elit, </p>
+		</div>
+	</body>
+</html>
