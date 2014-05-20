@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Panel Styles
+   ========================================================================== */
+
+.panel{
+	@extend %color-bg-alpha;
+	@include span(3 of 12);
+	padding:30px;
+	color:$color-white;
+	height:100%;
+	position:absolute;
+	@include opacity(1);
+}
+
+	.drop{
+		border: $border-app;
+		margin-bottom:$margin-l;
+	}

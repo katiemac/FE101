@@ -1,0 +1,140 @@
+/* ==========================================================================
+     Global Styles
+     ========================================================================== */ 
+
+// reset
+// -------------------------------------------------------
+body{
+	height:100%;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+// Breakpoints
+// -------------------------------------------------------
+@mixin breakpoint($point) {
+	@if $point == mobile {
+		@media (min-width: 320px) { @content; }
+	}
+	@else if $point == tablet {
+		@media (min-width: 640px) { @content; }
+	}
+	@else if $point == desktop {
+		@media (min-width: 980px) { @content; }
+	}
+}
+
+// Grid (Susy) http://susy.oddbird.net/
+// -------------------------------------------------------
+
+	$total-columns: 12;
+	$column-width: 3.625em;
+	$gutter-width: 1.5em;
+	$grid-padding: 0;
+
+	// Gutter width to use for tablet layout
+	$tablet-gutter-width: 40px;
+
+	// Gutter width to use for mobile layout
+	$mobile-gutter-width: 15px;
+
+
+// Borders
+// -------------------------------------------------------
+
+// Set-up custom borders
+
+$global-radius: 0 !default;
+$border-app: 1px solid $color-app-1;
+$border-dotted: 1px dotted $color-gray-4;
+$border-dotted-light: 2px dotted $color-gray-5;
+$border-dotted-gray: 2px dotted $color-gray-3;
+$border-dotted-dark: 2px dotted $color-gray-2;
+
+
+// Circles
+// -------------------------------------------------------
+
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  line-height:$width;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+
+
+// Triangles
+// -------------------------------------------------------
+//  
+// @param $direction: text value of direction (up,down,left,right)
+// @param $width: width of arrow border in pixels
+// @param $height: height of border in pixels
+// @param $color: hex or color value of arrow
+// 
+// default values will be used if no params are passed in
+// --------------------------------------------------------
+
+@mixin arrow( $direction: down, $color: $color-gray-6 , $width: 15px, $height: 15px){
+
+width: 0;
+height: 0;
+
+// Right Arrow
+@if ($direction == down){
+border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $height solid $color;
+    }
+    @if ($direction == up){  
+border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $height solid $color;
+}
+@if ($direction == left){
+border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $height solid $color;
+    }
+    @if ($direction == right){
+border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $height solid $color;
+    }
+}
+
+// Transitions
+// -------------------------------------------------------
+
+// Set-up custom transitions
+
+@mixin color_transition {
+	@include transition-property(color); 
+	@include transition-duration(0.3s); 
+	@include transition-timing-function(ease-in-out);
+}
+
+@mixin opacity_transition {
+	@include transition-property(opacity); 
+	@include transition-duration(0.3s); 
+	@include transition-timing-function(ease-in-out);
+}
+
+@mixin background_transition {
+	@include transition-property(background-color); 
+	@include transition-duration(0.3s); 
+	@include transition-timing-function(ease-in-out);
+}
+
+$global-transition-time: .2s !default;
+
+// Margins
+// -------------------------------------------------------
+
+$margin-s:10px;
+$margin-m:20px;
+$margin-l:30px;
+
+
