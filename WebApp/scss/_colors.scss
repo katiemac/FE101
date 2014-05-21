@@ -43,6 +43,6 @@ $email : #000;
 $instagram : #517fa4;
 
 // Transparentize
-%color-bg-alpha{
-  background-color: rgba(0,0,0,0.8);
+@mixin color-bg-alpha($opacity){
+  background-color: rgba(0,0,0,$opacity);
 }

@@ -9,6 +9,7 @@ body{
 	width:100%;
 	padding:0;
 	margin:0;
+ 	@include box-sizing(border-box);
 }
 
 // Breakpoints
@@ -18,7 +19,7 @@ body{
 		@media (min-width: 320px) { @content; }
 	}
 	@else if $point == tablet {
-		@media (min-width: 640px) { @content; }
+		@media (min-width: 768px) { @content; }
 	}
 	@else if $point == desktop {
 		@media (min-width: 980px) { @content; }

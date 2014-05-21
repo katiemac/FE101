@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Canvas
+   ========================================================================== */
+
+.canvas{
+	z-index:10;
+	margin-top:$margin-l;
+	@include span(isolate 6 at 5 of 12);
+}
+
+	.canvas-inner{
+		background-color:$color-white;
+		width: 504px; //these could be swapped based on size dropdown
+		height: 504px; //these could be swapped based on size dropdown
+		@include single-box-shadow(rgba(0,0,0,.4), 0, 0, 20px);
+		margin: 0 auto;
+	}

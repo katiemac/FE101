@@ -3,16 +3,46 @@
    ========================================================================== */
 
 .panel{
-	@extend %color-bg-alpha;
-	@include span(3 of 12);
+	@include color-bg-alpha(.65);
+	@include span(12 of 12);
 	padding:30px;
 	color:$color-white;
-	height:100%;
 	position:absolute;
 	@include opacity(1);
+	@include box-sizing(border-box);
+
+	@include breakpoint(tablet){
+		@include span(3 of 12);	
+		height:100%;
+	}
 }
 
 	.drop{
 		border: $border-app;
-		margin-bottom:$margin-l;
+		margin-bottom: $margin-s;
+		padding:15px;
+
+		@include breakpoint(tablet){
+			margin-bottom: $margin-l;		
+		}
+	}
+
+	.drop:after{
+		content:"";
+		display:block;
+		@include arrow( $direction: down, $color: $color-app-1 , $width: 10px, $height: 10px);
+		position:absolute;
+		right:50px;
+		display:inline;
+	}
+
+	button {
+		width:100%;
+		background: $color-app-1;
+		border:none;
+		padding:17px 15px 15px;
+		position:absolute;
+		bottom:0;
+		left:0;
+		@extend %type-drop-button; 
 	}

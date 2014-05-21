@@ -376,10 +376,6 @@ table {
 /* ==========================================================================
    Colors
    ========================================================================== */
-/* line 46, ../scss/_colors.scss */
-.panel {
-  background-color: rgba(0, 0, 0, 0.8); }
-
 /* ==========================================================================
      Global Styles
      ========================================================================== */
@@ -388,7 +384,10 @@ body {
   height: 100%;
   width: 100%;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 /* ==========================================================================
    Typography
@@ -416,38 +415,111 @@ body {
 /* ==========================================================================
    Typography Applications
    ========================================================================== */
+/* line 186, ../scss/_typography.scss */
+button {
+  font-family: "DinCndMd", Helvetica, Arial, Sans-serif;
+  font-size: 23.7047px;
+  font-size: 1.48154rem;
+  line-height: 1;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.3); }
+
 /* ==========================================================================
    Panel Styles
    ========================================================================== */
 /* line 5, ../scss/blocks/_panel.scss */
 .panel {
-  width: 23.72881%;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
   float: left;
-  margin-right: 1.69492%;
   padding: 30px;
   color: white;
-  height: 100%;
   position: absolute;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1; }
+  opacity: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 768px) {
+    /* line 5, ../scss/blocks/_panel.scss */
+    .panel {
+      width: 23.72881%;
+      float: left;
+      margin-right: 1.69492%;
+      height: 100%; } }
 
-/* line 15, ../scss/blocks/_panel.scss */
+/* line 20, ../scss/blocks/_panel.scss */
 .drop {
   border: 1px solid #2ac498;
-  margin-bottom: 30px; }
+  margin-bottom: 10px;
+  padding: 15px; }
+  @media (min-width: 768px) {
+    /* line 20, ../scss/blocks/_panel.scss */
+    .drop {
+      margin-bottom: 30px; } }
+
+/* line 30, ../scss/blocks/_panel.scss */
+.drop:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2ac498;
+  position: absolute;
+  right: 50px;
+  display: inline; }
+
+/* line 39, ../scss/blocks/_panel.scss */
+button {
+  width: 100%;
+  background: #2ac498;
+  border: none;
+  padding: 17px 15px 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+/* ==========================================================================
+   Canvas
+   ========================================================================== */
+/* line 5, ../scss/blocks/_canvas.scss */
+.canvas {
+  z-index: 10;
+  margin-top: 30px;
+  width: 49.15254%;
+  float: left;
+  margin-left: 33.89831%;
+  margin-right: -100%; }
+
+/* line 11, ../scss/blocks/_canvas.scss */
+.canvas-inner {
+  background-color: white;
+  width: 504px;
+  height: 504px;
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto; }
 
 /* ==========================================================================
    Background
    ========================================================================== */
-/* line 5, ../scss/blocks/_background.scss */
+/* line 4, ../scss/blocks/_background.scss */
 #pageContainer {
-  background-image: url("../assets/imgs/stardust.png");
-  background-repeat: repeat;
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute; }
+  z-index: 10; }
 
-/* line 13, ../scss/blocks/_background.scss */
+/* line 11, ../scss/blocks/_background.scss */
 #wrapper {
   width: 100%;
   height: 100%;
@@ -468,5 +540,14 @@ body {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9d25a', endColorstr='#c775d7',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-  opacity: 0.4; }
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=45);
+  opacity: 0.45; }
+
+/* line 26, ../scss/blocks/_background.scss */
+#bg {
+  background-image: url("../assets/imgs/stardust.png");
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1; }
