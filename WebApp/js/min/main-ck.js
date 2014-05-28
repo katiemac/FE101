@@ -1,0 +1,1 @@
+obj.dd.on("click",function(n){return $(this).toggleClass("active"),!1}),$(function(){var n=new DropDown($("#dd"));$(document).click(function(){$(".wrapper-drop-1").removeClass("active")})});

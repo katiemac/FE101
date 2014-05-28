@@ -17,23 +17,37 @@
 	}
 }
 
-	.drop{
+	.wrapper-drop-1{
 		border: $border-app;
 		margin-bottom: $margin-s;
 		padding:15px;
+		position: relative;
 
 		@include breakpoint(tablet){
 			margin-bottom: $margin-l;		
 		}
 	}
 
-	.drop:after{
+	.wrapper-drop-1:after{
 		content:"";
 		display:block;
-		@include arrow( $direction: down, $color: $color-app-1 , $width: 10px, $height: 10px);
+		@include arrow( $direction: down, $color: $color-app-1 , $width: 5px, $height: 5px);
 		position:absolute;
-		right:50px;
+		right:15px;
+		top:23px;
 		display:inline;
+	}
+
+	.wrapper-drop-1 .drop {
+	    /* Size & position */
+	    position: absolute;
+	    top: 100%;
+	    left: 0; /* Size */
+	    right: 0; /* Size */
+	 
+	    /* Hiding */
+	    opacity: 0;
+	    pointer-events: none;
 	}
 
 	button {

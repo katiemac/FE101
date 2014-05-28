@@ -455,29 +455,44 @@ button {
       height: 100%; } }
 
 /* line 20, ../scss/blocks/_panel.scss */
-.drop {
+.wrapper-drop-1 {
   border: 1px solid #2ac498;
   margin-bottom: 10px;
-  padding: 15px; }
+  padding: 15px;
+  position: relative; }
   @media (min-width: 768px) {
     /* line 20, ../scss/blocks/_panel.scss */
-    .drop {
+    .wrapper-drop-1 {
       margin-bottom: 30px; } }
 
-/* line 30, ../scss/blocks/_panel.scss */
-.drop:after {
+/* line 31, ../scss/blocks/_panel.scss */
+.wrapper-drop-1:after {
   content: "";
   display: block;
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #2ac498;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #2ac498;
   position: absolute;
-  right: 50px;
+  right: 15px;
+  top: 23px;
   display: inline; }
 
-/* line 39, ../scss/blocks/_panel.scss */
+/* line 41, ../scss/blocks/_panel.scss */
+.wrapper-drop-1 .drop {
+  /* Size & position */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* Size */
+  right: 0;
+  /* Size */
+  /* Hiding */
+  opacity: 0;
+  pointer-events: none; }
+
+/* line 53, ../scss/blocks/_panel.scss */
 button {
   width: 100%;
   background: #2ac498;
