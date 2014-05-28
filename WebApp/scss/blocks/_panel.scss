@@ -22,6 +22,10 @@
 		margin-bottom: $margin-s;
 		padding:15px;
 		position: relative;
+		width:100%;
+		cursor:pointer;
+		outline:none;
+		@include box-sizing(border-box);
 
 		@include breakpoint(tablet){
 			margin-bottom: $margin-l;		
@@ -35,7 +39,6 @@
 		position:absolute;
 		right:15px;
 		top:23px;
-		display:inline;
 	}
 
 	.wrapper-drop-1 .drop {
@@ -44,11 +47,31 @@
 	    top: 100%;
 	    left: 0; /* Size */
 	    right: 0; /* Size */
+	    transition: all 0.3s ease-out;
+    	list-style: none;
 	 
 	    /* Hiding */
 	    opacity: 0;
 	    pointer-events: none;
 	}
+
+	.wrapper-drop-1 .drop li a {
+	    display: block;
+	    text-decoration: none;
+	    transition: all 0.3s ease-out;
+	}
+	 
+	/* Hover state */
+	.wrapper-drop-1 .drop li:hover a {
+	    background: $color-app-1;
+	}
+
+	/* Active state */
+	.wrapper-drop-1.active .drop {
+	    opacity: 1;
+	    pointer-events: auto;
+	}
+
 
 	button {
 		width:100%;

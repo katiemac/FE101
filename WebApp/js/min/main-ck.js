@@ -1,1 +1,1 @@
-obj.dd.on("click",function(n){return $(this).toggleClass("active"),!1}),$(function(){var n=new DropDown($("#dd"));$(document).click(function(){$(".wrapper-drop-1").removeClass("active")})});
+function DropDown(n){this.dd=n,this.initEvents()}DropDown.prototype={initEvents:function(){var n=this;n.dd.on("click",function(n){$(this).toggleClass("active"),n.stopPropagation()})}},$(function(){var n=new DropDown($("#dd"));$(document).click(function(){$(".wrapper-drop-1").removeClass("active")})});

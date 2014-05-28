@@ -459,13 +459,19 @@ button {
   border: 1px solid #2ac498;
   margin-bottom: 10px;
   padding: 15px;
-  position: relative; }
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
   @media (min-width: 768px) {
     /* line 20, ../scss/blocks/_panel.scss */
     .wrapper-drop-1 {
       margin-bottom: 30px; } }
 
-/* line 31, ../scss/blocks/_panel.scss */
+/* line 35, ../scss/blocks/_panel.scss */
 .wrapper-drop-1:after {
   content: "";
   display: block;
@@ -476,10 +482,9 @@ button {
   border-top: 5px solid #2ac498;
   position: absolute;
   right: 15px;
-  top: 23px;
-  display: inline; }
+  top: 23px; }
 
-/* line 41, ../scss/blocks/_panel.scss */
+/* line 44, ../scss/blocks/_panel.scss */
 .wrapper-drop-1 .drop {
   /* Size & position */
   position: absolute;
@@ -488,11 +493,30 @@ button {
   /* Size */
   right: 0;
   /* Size */
+  transition: all 0.3s ease-out;
+  list-style: none;
   /* Hiding */
   opacity: 0;
   pointer-events: none; }
 
-/* line 53, ../scss/blocks/_panel.scss */
+/* line 58, ../scss/blocks/_panel.scss */
+.wrapper-drop-1 .drop li a {
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease-out; }
+
+/* Hover state */
+/* line 65, ../scss/blocks/_panel.scss */
+.wrapper-drop-1 .drop li:hover a {
+  background: #2ac498; }
+
+/* Active state */
+/* line 70, ../scss/blocks/_panel.scss */
+.wrapper-drop-1.active .drop {
+  opacity: 1;
+  pointer-events: auto; }
+
+/* line 76, ../scss/blocks/_panel.scss */
 button {
   width: 100%;
   background: #2ac498;
