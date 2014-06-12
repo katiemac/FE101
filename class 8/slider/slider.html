@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>slider</title>
+   <style>
+   #slider{
+   	position:relative;
+   }
+   	#slider img{
+   		width:200px;
+   		height:200px;
+   		position:absolute;
+   	}
+
+	#slider li{
+		list-style: none;
+	}
+
+   </style>
+</head>
+<body>
+	<div id="slider">
+		<ul>
+			<li><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Uniform_tiling_44-t12.png/300px-Uniform_tiling_44-t12.png" alt=""></li>
+			<li><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Uniform_tiling_44-t012.png/300px-Uniform_tiling_44-t012.png" alt=""></li>
+			<li><img src="http://upload.wikimedia.org/wikipedia/commons/9/99/Distorted_truncated_square_tiling.png" alt=""></li>
+			<li><img src="http://upload.wikimedia.org/wikipedia/commons/a/a3/Distorted_truncated_square_tiling2.png" alt=""></li>
+		</ul>
+	</div>	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var currentImage = 0;
+		$("#slider img").not(":first").hide();
+
+		//when i click cat
+		$("#slider").on("click", function(){
+			$("#slider img").eq(currentImage).hide();
+			
+			/*
+			currentImage++;
+			if(currentImage >= $("#slider img").length){
+				currentImage = 0
+			}*/
+			//update slide number
+			currentImage = (currentImage + 1) % $("#slider img").length;
+
+			//show new cat
+			$("#slider img").eq(currentImage).show();
+		});
+
+
+
+
+	});	
+
+
+
+	</script>
+</body>
+</html>
