@@ -16,6 +16,14 @@
 		height:100%;
 	}
 }
+	
+	#textArea textarea{
+		height:100px;
+		width:100%;
+		margin-bottom:20px;
+		padding:10px;
+		@include box-sizing(border-box);
+	}
 
 	.wrapper-drop-1{
 		border: $border-app;

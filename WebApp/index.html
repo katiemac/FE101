@@ -9,13 +9,12 @@
 		<div id="pageContainer">
 				<div class="panel">	
 					<div id="header">Piicly</div>
-					<div class="image">
-						<form action="">
-							<input type="file" name="pic" accept="image/*">
-							<input type="submit">
+					<div id="textArea">
+						<form>
+							<textarea type="text" name="content" id="text_cnv" placeholder="Enter text here..."></textarea>
 						</form>
 					</div>
-					<div id="dd" class="wrapper-drop-1"> Brand
+					<div class="dd wrapper-drop-1"> Brand
 						<ul class="drop brand">
 							<li><a href="#">Cosmo</a></li>
 							<li><a href="#">Elle</a></li>
@@ -23,7 +22,7 @@
 						</ul>
 					</div>
 
-					<div id="dd" class="wrapper-drop-1">Type
+					<div class="dd wrapper-drop-1">Type
 						<ul class="drop type">
 							<li><a href="">Quote</a></li>
 							<li><a href="">Food</a></li>
@@ -31,14 +30,14 @@
 							<li><a href="">Picture Split</a></li>
 						</ul>
 					</div>
-					<div id="dd" class="wrapper-drop-1">Align
+					<div class="dd wrapper-drop-1">Align
 						<ul class="drop alignment">
 							<li><a href="">Left</a></li>
 							<li><a href="">Center</a></li>
 							<li><a href="">Bottom</a></li>
 						</ul>
 					</div>
-					<div id="dd" class="wrapper-drop-1">Background
+					<div class="dd wrapper-drop-1">Background
 						<ul class="drop background">
 							<li><a href="">Translucent</a></li>
 							<li><a href="">Pattern</a></li>
@@ -49,9 +48,15 @@
 						<button type="button">Share on...</button>
 					</div>
 				</div>	
-				<div class="canvas">
+				<div class="rightPanel">
+					<div class="image">
+						<form action="">
+							<input type="file" name="pic" accept="image/*">
+							<input type="submit">
+						</form>
+					</div>
 					<div class="canvas-inner">	
-					<canvas id="displayCanvas" width="504px" height="504px"></canvas>	
+						<canvas id="canvas" width="600px" height="600px"></canvas>	
 					</div>
 				</div>
 		</div>
@@ -60,7 +65,10 @@
 			<div id="bg">
 			</div>	
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>	
+		<script src="bower_components/sprockets-modernizr/modernizr.js"></script>
+		<script type="text/javascript" src="bower_components/caman/dist/caman.full.min.js"></script>
 		<script type="text/javascript" src="/js/main.js"></script>
+
 	</body>
 
 </html>

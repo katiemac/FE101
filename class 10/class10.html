@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class 10</title>
+	<style>
+		img{
+			background-size:100%;
+			background-repeat:no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="shot_count"></div>
+	<div id="shots"></div>
+	
+
+	<img src="" width="350px" height="350px" alt="" data-src-lg="images/fiberbundles.jpg" data-src-sm="images/image7LR.jpg" class="responsive-img">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/breakpoint.js"></script>
+	<script>
+		$(window).setBreakpoints({      
+			distinct: true,       
+			breakpoints: [          
+			//	320,          
+			//	480,          
+				768     
+			]   
+		});
+
+
+		$(window).bind('enterBreakpoint768',function() {  
+			$(".responsive-img").css("background-image", "url("+$(".responsive-img").data("src-sm") + ")");
+		});
+
+		$(window).bind('exitBreakpoint768',function() {   
+			$(".responsive-img").css("background-image", "url("+$(".responsive-img").data("src-lg") + ")"); 
+		});
+	</script>
+	<script src="js/dribbble.js"></script>
+</body>
+</html>
