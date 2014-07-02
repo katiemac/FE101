@@ -64,10 +64,8 @@ function canvasApp(){
 ------------------------------------------------------------------------------*/
 
 	function image(){
-		return Caman("#canvas", "../images/ryan_gosling.jpg", function () {
-			// manipulate image here -- change this function to b within the selction dropdown stuff
-			//this.brightness(5);
 
+		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
 			//resize the image to fit the screen and crop
 			this.resize({
 				width: 600,
@@ -76,13 +74,32 @@ function canvasApp(){
 			this.crop(600, 600);
 
 			//in here will need if/else for the dropdown styles
+			// manipulate image here -- change this function to b within the selction dropdown stuff
+			this.greyscale();
+			this.sepia(10);
+			this.exposure(10);
+			this.contrast(15);
+			this.vignette("60%",35);
 
 			// You still have to call render!
 			this.render();
 
 		});
+
 	}
 
+	image(); //repaints the image that was uploaded
+
+//trying to figure out how to save it the image. can then pull that into the canvas for text manipulation
+/*	function imageSave(){
+			this.render(function () {
+		    this.save("../images/ryan_gosling_2.png");
+		  });
+		}
+
+		$("#done").click(function(){
+			imageSave();
+		});*/
 
 /*------------------------------------------------------------------------------
 				to add text from input on to the canvas 
@@ -135,13 +152,12 @@ function canvasApp(){
 /*------------------------------------------------------------------------------
 					UPDATE THE CANVAS 
 ------------------------------------------------------------------------------*/
-	var Caman = image(); //repaints the image that was uploaded
 
 	function update(){
 		//clearCanvas(cnv1); // clears the canvas
 		//add the styles based on the dropdown
 		addTextCnv(ctx1, this.value, x_pos, y_pos, maxWidth, lineHeight); // adds the text
-		Caman.reloadCanvasData();
+		//Caman.reloadCanvasData();
 	}
 	
 	update();

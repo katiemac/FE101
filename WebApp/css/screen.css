@@ -430,6 +430,21 @@ button {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.3); }
 
+/* line 196, ../scss/_typography.scss */
+#imageEdit .filter, .canvas-inner button {
+  font-family: "DinCndMd", Helvetica, Arial, Sans-serif;
+  font-size: 18.24px;
+  font-size: 1.14rem;
+  line-height: 1.2;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.3); }
+
 /* ==========================================================================
    Panel Styles
    ========================================================================== */
@@ -548,16 +563,6 @@ button {
   margin-left: 33.89831%;
   margin-right: -100%; }
 
-/* line 11, ../scss/blocks/_canvas.scss */
-.canvas-inner {
-  background-color: white;
-  width: 600px;
-  height: 600px;
-  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  margin: 0 auto; }
-
 /* ==========================================================================
    Background
    ========================================================================== */
@@ -612,3 +617,41 @@ button {
   bottom: 0;
   right: 0;
   z-index: -1; }
+
+/* line 1, ../scss/blocks/_modal.scss */
+#imageEdit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 998; }
+  /* line 10, ../scss/blocks/_modal.scss */
+  #imageEdit #filters {
+    margin-top: 30px; }
+  /* line 14, ../scss/blocks/_modal.scss */
+  #imageEdit .filter {
+    width: 200px;
+    position: relative;
+    margin: 20px 30px 0;
+    padding: 10px 20px;
+    float: left;
+    clear: both; }
+
+/* line 25, ../scss/blocks/_modal.scss */
+.canvas-inner {
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: 50px auto;
+  border: 10px solid #dedede; }
+  /* line 33, ../scss/blocks/_modal.scss */
+  .canvas-inner button {
+    width: auto;
+    position: relative;
+    margin: 20px 20px 20px 0;
+    padding: 10px 20px; }

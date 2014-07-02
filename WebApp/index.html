@@ -7,6 +7,16 @@
 
 	<body>	
 		<div id="pageContainer">
+				<div id="imageEdit" class="modal">
+					<div id="filters">	
+						<button id="#bw" class="filter">Black and White</button>
+						<button id="#bright" class="filter">Brightest</button>
+					</div>	
+					<div class="canvas-inner">	
+						<canvas id="canvas" width="600px" height="600px"></canvas>	
+					</div>
+					<button id="done">Done!</button>
+				</div>
 				<div class="panel">	
 					<div id="header">Piicly</div>
 					<div id="textArea">
@@ -14,13 +24,14 @@
 							<textarea type="text" name="content" id="text_cnv" placeholder="Enter text here..."></textarea>
 						</form>
 					</div>
-					<div class="dd wrapper-drop-1"> Brand
+					<button id="openModal">Add Image</button>
+					<!-- <div class="dd wrapper-drop-1"> Brand
 						<ul class="drop brand">
 							<li><a href="#">Cosmo</a></li>
 							<li><a href="#">Elle</a></li>
 							<li><a href="#">Esquire</a></li>
 						</ul>
-					</div>
+					</div> -->
 
 					<div class="dd wrapper-drop-1">Type
 						<ul class="drop type">
@@ -30,13 +41,13 @@
 							<li><a href="">Picture Split</a></li>
 						</ul>
 					</div>
-					<div class="dd wrapper-drop-1">Align
+					<!-- <div class="dd wrapper-drop-1">Align
 						<ul class="drop alignment">
 							<li><a href="">Left</a></li>
 							<li><a href="">Center</a></li>
 							<li><a href="">Bottom</a></li>
 						</ul>
-					</div>
+					</div> -->
 					<div class="dd wrapper-drop-1">Background
 						<ul class="drop background">
 							<li><a href="">Translucent</a></li>
@@ -55,8 +66,8 @@
 							<input type="submit">
 						</form>
 					</div>
-					<div class="canvas-inner">	
-						<canvas id="canvas" width="600px" height="600px"></canvas>	
+					<div class="canvas-text">	
+						<canvas id="canvas2" width="600px" height="600px"></canvas>	
 					</div>
 				</div>
 		</div>

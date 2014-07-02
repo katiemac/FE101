@@ -193,3 +193,12 @@ $line-height-large: 1.4 !global;
 
 }
 
+%type-drop-button2 {
+	@include font(1,2);
+	@include advancedtype;
+	color: $color-gray-1;
+	text-transform:uppercase;
+	letter-spacing: .08em;
+	@include single-text-shadow(1px, 1px, 0, 0, rgba(255, 255, 255, .3));
+
+}

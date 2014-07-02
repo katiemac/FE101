@@ -8,10 +8,4 @@
 	@include span(isolate 6 at 5 of 12);
 }
 
-	.canvas-inner{
-		background-color:$color-white;
-		width: 600px; //these could be swapped based on size dropdown
-		height: 600px; //these could be swapped based on size dropdown
-		@include single-box-shadow(rgba(0,0,0,.4), 0, 0, 20px);
-		margin: 0 auto;
-	}
+	
