@@ -47,14 +47,14 @@ function canvasApp(){
 
 	// function to clear the canvas
 	// cnv = the object with the canvas element
-	function clearCanvas(cnv) {
-		var ctx = cnv.getContext('2d');     // gets reference to canvas context
+	function clearCanvas(cnv1) {
+		var ctx = cnv1.getContext('2d');     // gets reference to canvas context
 		ctx.beginPath();    // clear existing drawing paths
 		ctx.save();         // store the current transformation matrix
 
 		  // Use the identity matrix while clearing the canvas
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
-		ctx.clearRect(0, 0, cnv.width, cnv.height);
+		ctx.clearRect(0, 0, cnv1.width, cnv1.height);
 
 		ctx.restore();        // restore the transform
 	}
@@ -62,8 +62,8 @@ function canvasApp(){
 /*------------------------------------------------------------------------------
 					CAMAN FILTERS
 ------------------------------------------------------------------------------*/
-
-	function image(){
+	
+	function imageBase(){
 
 		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
 			//resize the image to fit the screen and crop
@@ -73,8 +73,29 @@ function canvasApp(){
 
 			this.crop(600, 600);
 
+			// You still have to call render!
+			this.render();
+
+		});
+
+	}
+
+	imageBase(); //repaints the image that was uploaded
+	
+
+	function imageBW(){
+
+		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
 			//in here will need if/else for the dropdown styles
 			// manipulate image here -- change this function to b within the selction dropdown stuff
+			this.revert();
+
+			this.resize({
+				width: 600,
+			});
+
+			this.crop(600, 600);
+
 			this.greyscale();
 			this.sepia(10);
 			this.exposure(10);
@@ -83,12 +104,48 @@ function canvasApp(){
 
 			// You still have to call render!
 			this.render();
-
 		});
-
 	}
 
-	image(); //repaints the image that was uploaded
+	function imageBright(){
+		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
+			//in here will need if/else for the dropdown styles
+			// manipulate image here -- change this function to b within the selction dropdown stuff
+			this.revert();
+			
+			this.resize({
+				width: 600,
+			});
+
+			this.crop(600, 600);
+
+			this.brightness(7);
+			this.exposure(5);
+			this.contrast(16);
+			this.vibrance(7);
+
+			// You still have to call render!
+			this.render();
+		});
+	}
+
+	$(" #bw ").click(function(){
+			//clearCanvas(cnv1); //need to find out why clear isn't working
+			imageBW();
+	});
+
+	$(" #bright ").click(function(){
+			//clearCanvas(cnv1); //need to find out why clear isn't working
+			imageBright();
+	});
+
+
+	//close modal --- need to add saving out the canvas and adding to the other canvas
+	$(" #done ").click(function(){
+			$("#imageEdit").hide();
+	});
+
+
 
 //trying to figure out how to save it the image. can then pull that into the canvas for text manipulation
 /*	function imageSave(){
