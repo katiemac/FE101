@@ -9,3 +9,12 @@
 }
 
 	
+
+	#canvas {
+		background-color:$color-white;
+		width: 600px; //these could be swapped based on size dropdown
+		height: 600px; //these could be swapped based on size dropdown
+		position:absolute;
+		top:20px;
+		left:30%;
+	}

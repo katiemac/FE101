@@ -563,6 +563,15 @@ button {
   margin-left: 33.89831%;
   margin-right: -100%; }
 
+/* line 13, ../scss/blocks/_canvas.scss */
+#canvas {
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 20px;
+  left: 30%; }
+
 /* ==========================================================================
    Background
    ========================================================================== */
