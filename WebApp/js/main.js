@@ -88,7 +88,7 @@ function canvasApp(){
 		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
 			//in here will need if/else for the dropdown styles
 			// manipulate image here -- change this function to b within the selction dropdown stuff
-			this.revert();
+			this.revert(false);
 
 			this.resize({
 				width: 600,
@@ -111,7 +111,7 @@ function canvasApp(){
 		Caman("#canvas", "../images/ryan_gosling.jpg", function () {
 			//in here will need if/else for the dropdown styles
 			// manipulate image here -- change this function to b within the selction dropdown stuff
-			this.revert();
+			this.revert(false);
 			
 			this.resize({
 				width: 600,

@@ -2,19 +2,64 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
+		<link href='//camanjs.com/assets/site-1b542f1b0b93339214d0e7a8e5f7b177.css' rel='stylesheet' type='text/css' />
 	</head>
 
 	<body>	
 		<div id="pageContainer">
 				<div id="imageEdit" class="modal">
-					<div id="filters">	
-						<button id="bw" class="filter">Black and White</button>
-						<button id="bright" class="filter">Brightest</button>
-					</div>	
-					<div class="canvas-inner">	
-						<canvas id="canvas" width="600px" height="600px"></canvas>	
-					</div>
+					<div id="Content">
+
+  <img 
+    id="preset-example" 
+    src="/images/example2_600.jpg"
+    data-caman-hidpi="/images/example2_1200.jpg"
+  >
+
+  <div id="PresetFilters">
+  
+    <a data-preset="vintage">Vintage</a>
+  
+    <a data-preset="lomo">Lomo</a>
+  
+    <a data-preset="clarity">Clarity</a>
+  
+    <a data-preset="sinCity">Sin City</a>
+  
+    <a data-preset="sunrise">Sunrise</a>
+  
+    <a data-preset="crossProcess">Cross Process</a>
+  
+    <a data-preset="orangePeel">Orange Peel</a>
+  
+    <a data-preset="love">Love</a>
+  
+    <a data-preset="grungy">Grungy</a>
+  
+    <a data-preset="jarques">Jarques</a>
+  
+    <a data-preset="pinhole">Pinhole</a>
+  
+    <a data-preset="oldBoot">Old Boot</a>
+  
+    <a data-preset="glowingSun">Glowing Sun</a>
+  
+    <a data-preset="hazyDays">Hazy Days</a>
+  
+    <a data-preset="herMajesty">Her Majesty</a>
+  
+    <a data-preset="nostalgia">Nostalgia</a>
+  
+    <a data-preset="hemingway">Hemingway</a>
+  
+    <a data-preset="concentrate">Concentrate</a>
+
+    <a data-preset="blackAndWhite">Black and White</a>
+
+    <a data-preset="bright">Bright</a>
+  
+  </div>
+</div>
 					<button id="done">Done!</button>
 				</div>
 				<div class="panel">	
@@ -76,9 +121,14 @@
 			<div id="bg">
 			</div>	
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>	
+		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 		<script src="bower_components/sprockets-modernizr/modernizr.js"></script>
 		<script type="text/javascript" src="bower_components/caman/dist/caman.full.min.js"></script>
-		<script type="text/javascript" src="/js/main.js"></script>
+		<script type="text/javascript" src="/js/total.js"></script>
+
+	 <script type="text/javascript">
+      Caman.DEBUG = true
+    </script>
 
 	</body>
 
