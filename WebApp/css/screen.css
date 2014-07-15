@@ -431,19 +431,36 @@ button {
   text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.3); }
 
 /* line 196, ../scss/_typography.scss */
-#imageEdit .filter, .canvas-inner button {
+#imageEdit .filter {
   font-family: "DinCndMd", Helvetica, Arial, Sans-serif;
-  font-size: 18.24px;
-  font-size: 1.14rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.2;
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  color: #333333;
+  color: #aaaaaa;
   text-transform: uppercase;
   letter-spacing: .08em;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-  text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.3); }
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.2); }
+
+/* line 207, ../scss/_typography.scss */
+#imageEdit .dropzone {
+  font-family: "DinCndMd", Helvetica, Arial, Sans-serif;
+  font-size: 20.7936px;
+  font-size: 1.2996rem;
+  line-height: 1.2;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.2); }
 
 /* ==========================================================================
    Panel Styles
@@ -569,7 +586,7 @@ button {
   width: 600px;
   height: 600px;
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 30%; }
 
 /* ==========================================================================
@@ -595,26 +612,9 @@ button {
   top: 0;
   bottom: 0;
   right: 0;
-  background: #f9d25a;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f9d25a 0%, #de2e2c 50%, #c775d7 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #f9d25a), color-stop(50%, #de2e2c), color-stop(100%, #c775d7));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #f9d25a 0%, #de2e2c 50%, #c775d7 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #f9d25a 0%, #de2e2c 50%, #c775d7 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #f9d25a 0%, #de2e2c 50%, #c775d7 100%);
-  /* IE10+ */
-  background: linear-gradient(135deg, #f9d25a 0%, #de2e2c 50%, #c775d7 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9d25a', endColorstr='#c775d7',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=45);
-  opacity: 0.45; }
+  background: rgba(0, 0, 0, 0.3); }
 
-/* line 34, ../scss/blocks/_background.scss */
+/* line 35, ../scss/blocks/_background.scss */
 #bg {
   background-image: url("../assets/imgs/stardust.png");
   background-repeat: repeat;
@@ -637,30 +637,42 @@ button {
   background: rgba(0, 0, 0, 0.85);
   z-index: 998; }
   /* line 10, ../scss/blocks/_modal.scss */
-  #imageEdit #filters {
-    margin-top: 30px; }
+  #imageEdit #PresetFilters {
+    margin-top: 20px; }
   /* line 14, ../scss/blocks/_modal.scss */
   #imageEdit .filter {
-    width: 200px;
+    width: 120px;
     position: relative;
-    margin: 20px 30px 0;
-    padding: 10px 20px;
+    margin: 10px 50px 0;
+    padding: 10px 15px 6px;
     float: left;
-    clear: both; }
+    clear: both;
+    background: #666666;
+    cursor: pointer; }
+    /* line 24, ../scss/blocks/_modal.scss */
+    #imageEdit .filter.Active {
+      background: #2ac498;
+      color: #333333;
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+      text-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.2); }
+  /* line 31, ../scss/blocks/_modal.scss */
+  #imageEdit .dropzone {
+    position: absolute;
+    z-index: 9999999;
+    left: 38%;
+    top: 310px;
+    background: #2ac498;
+    padding: 10px 20px; }
 
-/* line 25, ../scss/blocks/_modal.scss */
-.canvas-inner {
+/* line 42, ../scss/blocks/_modal.scss */
+#preset-example {
   background-color: white;
   width: 600px;
   height: 600px;
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  margin: 50px auto;
-  border: 10px solid #dedede; }
-  /* line 33, ../scss/blocks/_modal.scss */
-  .canvas-inner button {
-    width: auto;
-    position: relative;
-    margin: 20px 20px 20px 0;
-    padding: 10px 20px; }
+  margin: 10px auto;
+  border: 10px solid #dedede;
+  position: absolute;
+  left: 250px; }

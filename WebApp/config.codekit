@@ -3731,6 +3731,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/example2_1200.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9106,
+		"inputAbbreviatedPath": "\/images\/example2_1200.png",
+		"outputAbbreviatedPath": "\/images\/example2_1200.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/example2_600.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3738,6 +3749,17 @@
 		"initialSize": 179641,
 		"inputAbbreviatedPath": "\/images\/example2_600.jpg",
 		"outputAbbreviatedPath": "\/images\/example2_600.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/example2_600.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9106,
+		"inputAbbreviatedPath": "\/images\/example2_600.png",
+		"outputAbbreviatedPath": "\/images\/example2_600.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

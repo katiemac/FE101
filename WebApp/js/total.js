@@ -1,4 +1,22 @@
 /*------------------------------------------------------------------------------
+          HANDLING RETINA
+------------------------------------------------------------------------------*/
+//  function retinaSize(){
+
+// 	var canvas = document.getElementById("canvas");
+// 	var devicePixelRatio = window.devicePixelRatio || 1;
+
+// 	// set the size of the drawingBuffer based on the size it's displayed.
+// 	canvas.width = canvas.clientWidth * devicePixelRatio;
+// 	canvas.height = canvas.clientHeight * devicePixelRatio;
+	   
+// 	var gl = canvas.getContext("webgl");
+
+// }
+
+
+
+/*------------------------------------------------------------------------------
           DROPDOWNS
 ------------------------------------------------------------------------------*/
 
@@ -81,15 +99,15 @@ Caman.Filter.register("bright", function(grey) {
 
   $(document).ready(function() {
     presetCaman = Caman('#preset-example');
-    //close modal --- need to add saving out the canvas and adding to the other canvas
+    //close modal
     $(" #done ").click(function(){ 
         //grab the context from your destination canvas
         var destCtx = document.getElementById('canvas').getContext('2d');
-        destCtx.drawImage(document.getElementById('preset-example'), 0, 0);    
+        destCtx.drawImage(document.getElementById('preset-example'), 0, 0, 600, 600);    
         $("#imageEdit").hide();
     });
     return $('#PresetFilters').on('click', 'a', function() {
-      return renderPreset($(this).data('preset'));
+    return renderPreset($(this).data('preset'));
     });
   });
 
@@ -110,10 +128,10 @@ Caman.Filter.register("bright", function(grey) {
   // sets maximum line width, line height, and x /y coords for text
   var cnv1 = document.getElementById('canvas');
   var ctx1 = cnv1.getContext('2d');
-  var maxWidth = cnv1.width - 10;
-  var lineHeight = 23;
-  var x_pos = (cnv1.width - maxWidth) / 2;
-  var y_pos = 15;
+  var maxWidth = cnv1.width - 400;
+  var lineHeight = 40;
+  var x_pos = 15;
+  var y_pos = 40;
 
   function  addTextCnv(ctx, text, x, y, maxWidth, lineHeight) {
   
@@ -140,10 +158,32 @@ Caman.Filter.register("bright", function(grey) {
       }
 
     // adds the text in canvas (sets text color, font type and size)
-    ctx.fillStyle = '#2ac498';
-    ctx.font = 'bold 17px sans-serif';
+    ctx.rect(20,20,150,100);
+    ctx.fillStyle = '#333333';
+    ctx.font = '30px Tiempos';
     ctx.fillText(addtxt, x, y);
   }
+
+
+
+
+/*------------------------------------------------------------------------------
+					CLEAR CANVAS
+------------------------------------------------------------------------------*/
+
+	// function to clear the canvas
+	// cnv = the object with the canvas element
+	function clearCanvas(cnv1) {
+		var ctx = cnv1.getContext('2d');     // gets reference to canvas context
+		ctx.beginPath();    // clear existing drawing paths
+		ctx.save();         // store the current transformation matrix
+
+		  // Use the identity matrix while clearing the canvas
+		ctx.setTransform(1, 0, 0, 1, 0, 0);
+		ctx.clearRect(0, 0, cnv1.width, cnv1.height);
+
+		ctx.restore();        // restore the transform
+	}
 
 
 /*------------------------------------------------------------------------------
@@ -151,10 +191,10 @@ Caman.Filter.register("bright", function(grey) {
 ------------------------------------------------------------------------------*/
 
   function update(){
-    //clearCanvas(cnv1); // clears the canvas
-    //add the styles based on the dropdown
+  	clearCanvas(cnv1); // clears the canvas
+  	var destCtx = document.getElementById('canvas').getContext('2d');
+    destCtx.drawImage(document.getElementById('preset-example'), 0, 0, 600, 600);  //adds image
     addTextCnv(ctx1, this.value, x_pos, y_pos, maxWidth, lineHeight); // adds the text
-    //Caman.reloadCanvasData();
   }
   
   update();
